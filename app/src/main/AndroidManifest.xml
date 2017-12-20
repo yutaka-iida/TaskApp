@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jp.techacademy.yutaka.iida.taskapp">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
     <application
         android:name=".TaskApp"
         android:allowBackup="true"
@@ -20,6 +22,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".InputActivity"
+            android:label="タスク"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="jp.techacademy.yutaka.iida.taskapp.MainActivity"/>
+        </activity>
+
+        <receiver android:name=".TaskAlarmReceiver"/>
     </application>
 
 </manifest>
